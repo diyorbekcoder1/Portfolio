@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+    <title>Register</title>
 
     <!-- Global stylesheets -->
     <link href="{{asset('/assets/fonts/inter/inter.css')}}" rel="stylesheet" type="text/css">
@@ -39,16 +39,9 @@
         <div class="d-flex justify-content-end align-items-center ms-auto">
             <ul class="navbar-nav flex-row">
 
+
                 <li class="nav-item">
-                    <a href="#" class="navbar-nav-link navbar-nav-link-icon rounded ms-1">
-                        <div class="d-flex align-items-center mx-md-1">
-                            <i class="ph-user-circle-plus"></i>
-                            <span class="d-none d-md-inline-block ms-2">Register</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="navbar-nav-link navbar-nav-link-icon rounded ms-1">
+                    <a href="{{route('login')}}" class="navbar-nav-link navbar-nav-link-icon rounded ms-1">
                         <div class="d-flex align-items-center mx-md-1">
                             <i class="ph-user-circle"></i>
                             <span class="d-none d-md-inline-block ms-2">Login</span>
@@ -75,7 +68,7 @@
             <div class="content d-flex justify-content-center align-items-center">
 
                 <!-- Registration form -->
-                <form method="post" action="{{ route('register.perform') }}" class="flex-fill">
+                <form method="post" action="{{ route('register') }}" class="flex-fill">
                     @csrf
                     @method('post')
                     <div class="row">
@@ -89,19 +82,51 @@
                                         <h5 class="mb-0">Create account</h5>
                                         <span class="d-block text-muted">All fields are required</span>
                                     </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Name</label>
+                                        <div class="form-control-feedback form-control-feedback-start">
+                                            <input type="text" name="name" class="form-control" placeholder="JohnDoe">
+                                            <div class="form-control-feedback-icon">
+                                                <i class="ph-user-circle text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="mb-3">
                                         <label class="form-label">Username</label>
                                         <div class="form-control-feedback form-control-feedback-start">
-                                            <input type="text" class="form-control" name="username"
-                                                   value="{{ old('username') }}" placeholder="Username"
-                                                   required="required" autofocus>
-                                            @if ($errors->has('username'))
-                                                <span
-                                                    class="text-danger text-left">{{ $errors->first('username') }}</span>
-                                            @endif
+                                            <input type="text" name="username" class="form-control" placeholder="JohnDoe">
                                             <div class="form-control-feedback-icon">
                                                 <i class="ph-user-circle text-muted"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Password</label>
+                                                <div class="form-control-feedback form-control-feedback-start">
+                                                    <input type="password" name="password" class="form-control"
+                                                           placeholder="•••••••••••">
+                                                    <div class="form-control-feedback-icon">
+                                                        <i class="ph-lock text-muted"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Password Confirmation</label>
+                                                <div class="form-control-feedback form-control-feedback-start">
+                                                    <input type="password" name="password_confirmation" class="form-control"
+                                                           placeholder="•••••••••••">
+                                                    <div class="form-control-feedback-icon">
+                                                        <i class="ph-lock text-muted"></i>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -111,14 +136,7 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Your email</label>
                                                 <div class="form-control-feedback form-control-feedback-start">
-                                                    <input type="email" class="form-control" name="email"
-                                                           value="{{ old('email') }}" placeholder="name@example.com"
-                                                           required="required" autofocus>
-
-                                                    @if ($errors->has('email'))
-                                                        <span
-                                                            class="text-danger text-left">{{ $errors->first('email') }}</span>
-                                                    @endif
+                                                    <input type="email" name="email" class="form-control" placeholder="john@doe.com">
                                                     <div class="form-control-feedback-icon">
                                                         <i class="ph-at text-muted"></i>
                                                     </div>
@@ -128,42 +146,6 @@
 
 
                                     </div>
-
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label class="form-label">Create password</label>
-                                                <div class="form-control-feedback form-control-feedback-start">
-                                                    <input type="password" class="form-control" name="password" value="{{ old('password') }}" placeholder="Password" required="required">
-                                                      @if ($errors->has('password'))
-                                                        <span class="text-danger text-left">{{ $errors->first('password') }}</span>
-                                                    @endif
-                                                    <div class="form-control-feedback-icon">
-                                                        <i class="ph-lock text-muted"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label class="form-label">Confirm Password</label>
-                                                <div class="form-control-feedback form-control-feedback-start">
-                                                    <input type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirm Password" required="required">
-
-                                                    @if ($errors->has('password_confirmation'))
-                                                        <span class="text-danger text-left">{{ $errors->first('password_confirmation') }}</span>
-                                                    @endif
-                                                    <div class="form-control-feedback-icon">
-                                                        <i class="ph-lock text-muted"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
 
 
                                 </div>

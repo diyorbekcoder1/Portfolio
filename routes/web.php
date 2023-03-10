@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,33 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::group(['namespace' => 'App\Http\Controllers'], function()
-{
-    /**
-     * Home Routes
-     */
-    Route::get('/', 'HomeController@index')->name('frontend.port');
+Route::get('/', 'HomeController@index')->name('frontend.port');
 
-    Route::group(['middleware' => ['guest']], function() {
-        /**
-         * Register Routes
-         */
-        Route::get('/register', 'RegisterController@show')->name('register.show');
-        Route::post('/register', 'RegisterController@register')->name('register.perform');
+Route::group(['middleware' => ['auth:web']], function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('limitless');
 
-        /**
-         * Login Routes
-         */
-        Route::get('/login', 'LoginController@show')->name('login.show');
-        Route::post('/login', 'LoginController@login')->name('login.perform');
 
-    });
-
-    Route::group(['middleware' => ['auth']], function() {
-        /**
-         * Logout Routes
-         */
-        Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
-    });
 });
-
+Route::get('/register', [AuthController::class, 'register_page'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+Route::get('/login', [AuthController::class, 'login_page'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
