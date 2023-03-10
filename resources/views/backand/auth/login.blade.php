@@ -48,7 +48,7 @@
                                     <img src="{{asset('/assets/images/logo_icon.svg')}}" class="h-48px" alt="">
                                 </div>
                                 <h5 class="mb-0">Login to your account</h5>
-                                <span class="d-block text-muted">Enter your credentials below</span>
+
                             </div>
 
                             <div class="mb-3">
