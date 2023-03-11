@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
     @include('backand.layouts.partials.meta')
+    @yield('js')
     <title>Portfolio</title>
 </head>
 

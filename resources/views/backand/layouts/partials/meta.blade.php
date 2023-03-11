@@ -30,4 +30,5 @@
 <script src="{{asset('/assets/demo/charts/pages/dashboard/heatmaps.js')}}"></script>
 <script src="{{asset('/assets/demo/charts/pages/dashboard/pies.js')}}"></script>
 <script src="{{asset('/assets/demo/charts/pages/dashboard/bullets.js')}}"></script>
+
 <!-- /theme JS files -->

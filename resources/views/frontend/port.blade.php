@@ -238,7 +238,7 @@
                         </div>
                     </div>
                     <div class="html-prog wow prog">
-                        <div class="html-progress wow">95%</div>
+                        <div style="width: 40%" class="html-progress wow" >50%</div>
                     </div>
                 </div>
                 <div class="skill-html skill">
