@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SkillsRequest extends FormRequest
+class PercentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,8 @@ class SkillsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|unique:skills,name',
-            'percent' => 'required|unique:skills,percent',
+            'name' => 'required',
+            'percent' => 'required',
         ];
     }
 }

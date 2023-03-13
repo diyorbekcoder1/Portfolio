@@ -1,17 +1,16 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SkillsController;
+use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('frontend.port');
 
 Route::group(['middleware' => ['auth:web']], function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('limitless');
-    Route::resource('skills', SkillsController::class);
+    Route::resource('/skills', \App\Http\Controllers\PercentController::class);
 
 });
 Route::get('/register', [AuthController::class, 'register_page'])->name('register');

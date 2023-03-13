@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Skills extends Model
+class Percent extends Model
 {
     use HasFactory;
-    protected $table='skills';
+    protected $table='percents';
     protected $fillable=['name','percent'];
-
 
 }

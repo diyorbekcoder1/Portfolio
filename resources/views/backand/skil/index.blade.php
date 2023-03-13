@@ -1,6 +1,6 @@
 @extends('backand.layouts.app')
 @section('content')
-
+    <!-- Container-fluid starts-->
     <div class="container-fluid">
         @if (session()->has('message'))
             <div class="alert alert-success">
@@ -29,13 +29,13 @@
                             </thead>
                             <tbody>
 
-                            @if(isset($skills))
-                                @foreach($skills as $key => $skill)
+                            @if(isset($per))
+                                @foreach($per as $key => $blogs)
                                     <tr>
                                         <th scope="row">{{++$key}}</th>
 
-                                        <td>{{$skill->name}}</td>
-                                        <td>{{$skill->percent}}</td>
+                                        <td>{{$blogs->name}}</td>
+                                        <td>{{$blogs->percent}}%</td>
 
 
                                         <td>
@@ -68,6 +68,6 @@
 
         </div>
     </div>
-
+    <!-- Container-fluid Ends-->
 
 @endsection
