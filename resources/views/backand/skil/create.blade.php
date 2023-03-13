@@ -31,7 +31,7 @@
                                     <div class="col-12">
                                         <div class="form-label-group">
                                             <label for="form_name">Percent</label>
-                                            <input id="form_name" type="text" name="percent"
+                                            <input id="form_name" type="number" name="percent"
                                                    class="form-control  @error('percent') is-invalid @enderror"
                                                    placeholder="Please enter your address *"
                                                    data-error="address is required."
@@ -43,8 +43,10 @@
                                         </div>
                                     </div>
 
-                                    <div style="margin-top: 20px;" class="block-header">
-                                        <button class="btn btn-primary">Submit</button>
+                                    <div style="margin-top: 20px;">
+
+                                        <button type="submit" class="btn btn-primary ms-3">Submit <i
+                                                class="ph-paper-plane-tilt ms-2"></i></button>
                                     </div>
                                 </form>
                             </div>

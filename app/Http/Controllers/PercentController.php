@@ -30,8 +30,9 @@ class PercentController extends Controller
 
     public function edit($id): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
+        $per_edit = Percent::find($id);
+        return view('backand.skil.edit', compact('per_edit'));
 
-        return view('backand.skil.edit');
     }
 
 
@@ -40,7 +41,6 @@ class PercentController extends Controller
         $data = $percentRequest->validated();
         $post = Percent::find($id);
         $post->update($data);
-        return redirect()->route('skills.index')->with('message', 'Post successfully update.');
     }
 
 
