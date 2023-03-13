@@ -11,7 +11,7 @@ trait FileUpload
 //        $file->move(storage_path('/app/public/images'), $name);
         $file->move(public_path('uploads'), $name);
         $data['image'] = $name;
-        return $data;
+        return $data ;
 
     }
 }
