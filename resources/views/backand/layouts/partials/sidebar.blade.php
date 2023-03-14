@@ -33,6 +33,7 @@
                 </li>
                 <li class="nav-item"><a href="" class="nav-link">Dashboard</a></li>
                 <li class="nav-item"><a href="{{route('skills.index')}}" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="{{route('links.index')}}" class="nav-link">Socials</a></li>
 
 
             </ul>

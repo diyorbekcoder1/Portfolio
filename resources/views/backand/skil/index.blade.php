@@ -39,8 +39,8 @@
 
 
                                         <td>
-                                            <a href="{{route('skills.edit', $blogs)}}"
-                                               class="btn btn-primary">Edit</a>
+{{--                                            <a href="{{route('skills.edit', $blogs)}}"--}}
+{{--                                               class="btn btn-primary">Edit</a>--}}
                                             <form class="d-inline"
                                                   action="{{route('skills.destroy', $blogs->id)}}"
                                                   method="post">

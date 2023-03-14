@@ -44,6 +44,7 @@
 <!-- Demo config -->
 @include('backand.layouts.partials.config')
 <!-- /demo config -->
+@stack("javascript")
 
 </body>
 </html>

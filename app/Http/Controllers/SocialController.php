@@ -1,59 +1,45 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\SocialRequest;
+use App\Models\Social;
+use App\Traits\FileUpload;
 use Illuminate\Http\Request;
 
 class SocialController extends Controller
 {
     use  FileUpload;
-    public function index()
+    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
-        $blog = Blog::all();
-        return view('backend.blog.blog', compact('blog'));
+        $socels = Social::all();
+        return view('backand.links.index', compact('socels'));
     }
-    public function create()
+    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
-        return view('backend.blog.blog_create');
+        return view('backand.links.create');
     }
 
-    public function store(BlogRequest $blogRequest)
+    public function store(SocialRequest $socialRequest)
     {
 
-        $data = $blogRequest->validated();
+        $data = $socialRequest->validated();
         $data = $this->fileUpload($data);
-        Blog::create($data);
-        return redirect()->route('admin.blog.index')->with('message', 'Post successfully create.');
+        Social::create($data);
+        return redirect()->route('links.index')->with('message', 'Post successfully create.');
     }
 
 
-    public function edit($id)
-    {
-        $blog_edit = Blog::find($id);
-        return view('backend.blog.blog_edit', compact('blog_edit'));
-    }
 
 
-    public function update(BlogRequest $blogRequest, $id)
-    {
-        $data = $blogRequest->validated();
-        $post = Blog::find($id);
-        if (isset($data['image'])) {
-            $data = $this->fileUpload($data);
-        }
-        $post->update($data);
-
-        return redirect()->route('admin.blog.index')->with('message', 'Post successfully update.');
-    }
 
 
-    public function destroy($id)
+    public function destroy($id): \Illuminate\Http\RedirectResponse
     {
         $request = request()->merge(['id' => $id]);
-        $request->validate(['id' => 'required|exists:blogs,id']);
-        $post = Blog::find($id);
+        $request->validate(['id' => 'required|exists:socials,id']);
+        $post = Social::find($id);
         unlink('uploads/' . $post->image);
         $post->delete();
-        return redirect()->route('admin.blog.index')->with('message', 'Post successfully delete.');
+        return redirect()->route('links.index')->with('message', 'Post successfully delete.');
     }
 }
