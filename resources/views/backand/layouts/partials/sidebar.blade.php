@@ -36,6 +36,7 @@
                 <li class="nav-item"><a href="{{route('links.index')}}" class="nav-link">Socials</a></li>
 
 
+
             </ul>
         </div>
         <!-- /main navigation -->

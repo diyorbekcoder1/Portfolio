@@ -11,57 +11,38 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Skills </h5>
+                        <h5>Menus </h5>
                     </div>
                     <div class="title m-l-5 m-1"><a
-                            class="btn mr-1 mb-3 btn-primary btn-sm " href="{{route('skills.create')}}">Skills
+                            class="btn mr-1 mb-3 btn-primary btn-sm " href="{{route('menu.create')}}">Menus
                             add</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                             <tr>
-
-
-{{--                                @if(isset($skills))--}}
-{{--                                    @foreach($skills as $skill)--}}
-{{--                                        <div class="skill-text">--}}
-{{--                                            <div class="html">{{$skill->name}}</div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="html-prog wow prog">--}}
-{{--                                            <div style="width: {{$skill->percent}}%" class="html-progress wow">{{$skill->percent}}--}}
-{{--                                                %--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-
-{{--                                    @endforeach--}}
-
-{{--                                @endif--}}
-
-
-
                                 <th scope="col">№</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Percent</th>
+                                <th scope="col">Link</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            @if(isset($per))
-                                @foreach($per as $key => $blogs)
+                            @if(isset($menus))
+                                @foreach($menus as $key => $menu)
                                     <tr>
                                         <th scope="row">{{++$key}}</th>
 
-                                        <td>{{$blogs->name}}</td>
-                                        <td>{{$blogs->percent}}%</td>
 
+                                        <td>{{$menu->name}}</td>
+                                        <td>{{$menu->link}}</td>
 
                                         <td>
-{{--                                            <a href="{{route('skills.edit', $blogs)}}"--}}
-{{--                                               class="btn btn-primary">Edit</a>--}}
+                                            {{--                                            <a href="{{route('links.edit', $socel)}}"--}}
+                                            {{--                                               class="btn btn-primary">Edit</a>--}}
                                             <form class="d-inline"
-                                                  action="{{route('skills.destroy', $blogs->id)}}"
+                                                  action="{{route('menu.destroy', $menu->id)}}"
                                                   method="post">
                                                 @csrf
                                                 @method('DELETE')

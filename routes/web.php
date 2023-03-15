@@ -13,6 +13,7 @@ Route::group(['middleware' => ['auth:web']], function () {
     Route::resource('/skills', \App\Http\Controllers\PercentController::class);
     Route::resource('/links', \App\Http\Controllers\SocialController::class);
 
+
 });
 Route::get('/register', [AuthController::class, 'register_page'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('register.post');
