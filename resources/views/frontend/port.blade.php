@@ -9,7 +9,7 @@
     <meta name="author" content="willy wonka" />
     <title> Portfolio</title>
     <!--favicon-img-->
-    <link rel="icon" type="image/png" href="{{asset('images/favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('images/logo.png')}}">
     <!--favicon-img-->
     <!--main css file should not be removed -->
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
@@ -229,67 +229,27 @@
             <div class="skills-header">
                 My <span class="color"> Skills</span>
             </div>
-            <div class="skills-content " style="text-align: center;">
+            <div class="skills-content ">
+                @if(isset($skills))
+                    @foreach($skills as $skill)
+
                 <div class="skill-html skill">
                     <div class="skill-text">
                         <div class="html">
-                            HTML/CSS
+                        {{$skill->name}}
                         </div>
                     </div>
                     <div class="html-prog wow prog">
-                        <div style="width: 40%" class="html-progress wow" >50%</div>
+                        <div style="width: {{$skill->percent}}%" class="html-progress wow" >{{$skill->percent}}%</div>
                     </div>
                 </div>
-                <div class="skill-html skill">
-                    <div class="skill-text">
-                        <div class="html">
-                            Javascript
-                        </div>
-                    </div>
-                    <div class="html-prog wow prog">
-                        <div class="js-progress wow">90%</div>
-                    </div>
-                </div>
-                <div class="skill-html skill">
-                    <div class="skill-text">
-                        <div class="html">
-                            Adobe Ps
-                        </div>
-                    </div>
-                    <div class="html-prog wow prog">
-                        <div class="adobe-progress wow">83%</div>
-                    </div>
-                </div>
-                <div class="skill-html skill">
-                    <div class="skill-text">
-                        <div class="html">
-                            PHP
-                        </div>
-                    </div>
-                    <div class="html-prog wow prog">
-                        <div class="php-progress wow">87%</div>
-                    </div>
-                </div>
-                <div class="skill-html skill">
-                    <div class="skill-text">
-                        <div class="html">
-                            JQuery
-                        </div>
-                    </div>
-                    <div class="html-prog wow prog">
-                        <div class="jquery-progress wow">94%</div>
-                    </div>
-                </div>
-                <div class="skill-html skill">
-                    <div class="skill-text">
-                        <div class="html">
-                            SEO
-                        </div>
-                    </div>
-                    <div class="html-prog wow prog">
-                        <div class="seo-progress wow">84%</div>
-                    </div>
-                </div>
+
+                    @endforeach
+
+                @endif
+
+
+
             </div>
         </div>
         <!--copyright-section You Can Remove After Downloading-->
