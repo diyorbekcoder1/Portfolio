@@ -26,7 +26,7 @@ class SocialRequest extends FormRequest
             'instagram' => ['required'],
             'linkedin' => ['required'],
             'twitter' => ['required'],
-            'image'=> ['mimes:jpeg,jpg,png,gif,pdf,|max:5000'],
+
 
         ];
     }

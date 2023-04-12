@@ -22,7 +22,6 @@
                             <thead>
                             <tr>
                                 <th scope="col">№</th>
-                                <th scope="col">Logo</th>
                                 <th scope="col">Instagram</th>
                                 <th scope="col">Facebook</th>
                                 <th scope="col">Linkedin</th>
@@ -37,18 +36,16 @@
                                     <tr>
                                         <th scope="row">{{++$key}}</th>
 
-                                        <td style="width: 50px; height: 50px; border-radius: 50%;"><img
-                                                style="width: 50px; height: 50px; border-radius: 50%;"
-                                                src="{{ asset('uploads/'.$socel->image) }}"
-                                                alt="">
-                                        </td>
+{{--                                        <td style="width: 50px; height: 50px; border-radius: 50%;"><img--}}
+{{--                                                style="width: 50px; height: 50px; border-radius: 50%;"--}}
+{{--                                                src="{{ asset('uploads/'.$socel->image) }}"--}}
+{{--                                                alt="">--}}
+{{--                                        </td>--}}
                                         <td>{{$socel->instagram}}</td>
                                         <td>{{$socel->facebook}}</td>
                                         <td>{{$socel->linkedin}}</td>
                                         <td>{{$socel->twitter}}</td>
                                         <td>
-{{--                                            <a href="{{route('links.edit', $socel)}}"--}}
-{{--                                               class="btn btn-primary">Edit</a>--}}
                                             <form class="d-inline"
                                                   action="{{route('links.destroy', $socel->id)}}"
                                                   method="post">

@@ -14,7 +14,7 @@
                                       enctype="multipart/form-data">
                                     @method('POST')
                                     @csrf
-                                    <div class="col-12">
+                                    <div class="col-12 mt-2">
                                         <div class="form-label-group">
                                             <label for="form_name">Instagram</label>
                                             <input id="form_name" type="text" name="instagram"
@@ -28,7 +28,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 mt-2">
                                         <div class="form-label-group">
                                             <label for="form_name">Facebook</label>
                                             <input id="form_name" type="text" name="facebook"
@@ -42,7 +42,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 mt-2">
                                         <div class="form-label-group">
                                             <label for="form_name">Linkedin</label>
                                             <input id="form_name" type="text" name="linkedin"
@@ -56,7 +56,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 mt-2 ">
                                         <div class="form-label-group">
                                             <label for="form_name">Twitter</label>
                                             <input id="form_name" type="text" name="twitter"
@@ -68,17 +68,6 @@
                                             @error('twitter')
                                             <span style="color: red">{{$message}} </span>
                                             @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5 class="mb-0">Upload image</h5>
-                                        </div>
-
-                                        <div class="card-body">
-
-                                            <input type="file" class="file-input" name="image" multiple="multiple">
                                         </div>
                                     </div>
 

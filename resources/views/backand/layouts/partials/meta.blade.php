@@ -8,7 +8,7 @@
 <link href="{{asset('/assets/icons/phosphor/styles.min.css')}}" rel="stylesheet" type="text/css">
 <link href="{{asset('asset/css/ltr/all.min.css')}}" id="stylesheet" rel="stylesheet" type="text/css">
 <!-- /global stylesheets -->
-
+<link rel="icon" type="image/png" href="{{asset('images/logo.png')}}">
 <!-- Core JS files -->
 <script src="{{asset('/assets/demo/demo_configurator.js')}}"></script>
 <script src="{{asset('/asset/js/bootstrap/bootstrap.bundle.min.js')}}"></script>

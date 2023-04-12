@@ -9,5 +9,5 @@ class Social extends Model
 {
     use HasFactory;
     protected $table='socials';
-    protected $fillable =['image','facebook','instagram','linkedin','twitter'];
+    protected $fillable =['facebook','instagram','linkedin','twitter'];
 }

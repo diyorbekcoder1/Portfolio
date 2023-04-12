@@ -67,13 +67,17 @@
     <div id="header">
         <div id="particles"></div>
         <!--Social Media Links-->
+        @if(isset($social))
+            @foreach($social as $socials)
         <div class="social-media-links">
-            <a href="#"><img src="images/instagram logo.png" class="social-media" alt="instagram-logo"></a><!--Your instagram homepage link inser in place of "#"-->
-            <a href="#"><img src="images/facebook logo.png" class="social-media" alt="facebook-logo"></a>
-            <a href="#"><img src="images/linkedin logo.png" class="social-media" alt="linkedin-logo"></a>
-            <a href="#"><img src="images/twitter logo.png" class="social-media" alt="twitter-logo"></a>
+            <a href="{{$socials->instagram}}"><img src="images/instagram logo.png" class="social-media" alt="instagram-logo"></a><!--Your instagram homepage link inser in place of "#"-->
+            <a href="{{$socials->facebook}}"><img src="images/facebook logo.png" class="social-media" alt="facebook-logo"></a>
+            <a href="{{$socials->linkedin}}"><img src="images/linkedin logo.png" class="social-media" alt="linkedin-logo"></a>
+            <a href="{{$socials->twitter}}"><img src="images/twitter logo.png" class="social-media" alt="twitter-logo"></a>
 
         </div>
+            @endforeach
+        @endif
         <!--Social Media Links end-->
         <div class="header-content">
             <div class="header-content-box">
@@ -84,8 +88,8 @@
                     <span class="slash">|</span>
                 </div>
                 <div class="contact">
-                    <a href="Mailto:#"><img src="images/mail.png" alt="email-pic" class="contactpic"></a><!--Your email Id write in place of "#"-->
-                    <a href="Tel:#"><img src="images/call.png" alt="phone-pic" class="contactpic"></a><!--Your telephone number Id write in place of "#"-->
+                    <a href="Mailto:diyorbekfazliddinoff@gmail.com"><img src="images/mail.png" alt="email-pic" class="contactpic"></a><!--Your email Id write in place of "#"-->
+                    <a href="Tel:+998939302209"><img src="images/call.png" alt="phone-pic" class="contactpic"></a><!--Your telephone number Id write in place of "#"-->
                 </div>
             </div>
         </div>
